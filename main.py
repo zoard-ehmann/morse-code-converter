@@ -1,4 +1,5 @@
-from morse_generator import MorseGenerator
+from morse_loader import MorseLoader
 
 
-morse_generator = MorseGenerator('test.csv')
+morse_loader = MorseLoader()
+print(morse_loader.data)
