@@ -8,7 +8,9 @@ def show_info():
     print('\n***********************************************************************************************************************')
     print('')
     print('Plain Text - case insensitive, allowed characters: latin letters, numbers, punctuation characters, whitespaces')
+    print('Plain Text Example - "This is a sample text 4 the converter, does this makes sense?"')
     print('Morse Code - space delimited (between letters), allowed characters: dot (.) = dih, dash (-) = dah, slash (/) = space')
+    print('Morse Code Example - "... .- -- / .---- ..--- ...-- / .-.-.- -.-.-- ..--.."')
     print('')
     print('***********************************************************************************************************************\n')
 
