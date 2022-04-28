@@ -1,3 +1,5 @@
+import re
+
 from morse_loader import MorseLoader
 
 
@@ -5,6 +7,7 @@ class MorseConverter():
 
     def __init__(self):
         self.morse_table = MorseLoader().data
+        self.morse_re = re.compile('^[\-\.]+$')
 
     def morse_encode(self, inp):
         morse_code = ""
@@ -13,7 +16,10 @@ class MorseConverter():
             if char.isspace():
                 morse_code += '/'
             else:
-                morse_code += self.morse_table[char]
+                try:
+                    morse_code += self.morse_table[char]
+                except KeyError:
+                    return f'!!! Invalid input: {char} !!!'
             morse_code += ' '
 
         return morse_code
@@ -24,10 +30,12 @@ class MorseConverter():
         for char in inp.split():
             if char == '/':
                 plain_text += ' '
-            else:
+            elif self.morse_re.match(char):
                 for letter, code in self.morse_table.items():
                     if code == char:
                         plain_text += letter
                         break
+            else:
+                return f'!!! Invalid input: {char} !!!'
         
         return plain_text
