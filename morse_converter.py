@@ -28,5 +28,6 @@ class MorseConverter():
                 for letter, code in self.morse_table.items():
                     if code == char:
                         plain_text += letter
+                        break
         
         return plain_text
