@@ -5,6 +5,8 @@ mc = MorseConverter()
 
 
 def show_info():
+    """Shows an info box with the allowed inputs / examples.
+    """
     print('\n***********************************************************************************************************************')
     print('')
     print('Plain Text - case insensitive, allowed characters: latin letters, numbers, punctuation characters, whitespaces')

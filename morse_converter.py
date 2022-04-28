@@ -6,10 +6,20 @@ from morse_loader import MorseLoader
 class MorseConverter():
 
     def __init__(self):
+        """Responsible for encoding and decoding morse characters.
+        """
         self.morse_table = MorseLoader().data
         self.morse_re = re.compile('^[\-\.]+$')
 
-    def morse_encode(self, inp):
+    def morse_encode(self, inp:str) -> str:
+        """Encodes plain text into morse code.
+
+        Args:
+            inp (str): Plain text input.
+
+        Returns:
+            str: Morse code equialent of plain text input.
+        """
         morse_code = ""
 
         for char in inp.upper():
@@ -24,7 +34,15 @@ class MorseConverter():
 
         return morse_code
 
-    def morse_decode(self, inp):
+    def morse_decode(self, inp:str) -> str:
+        """Decodes morse code into plain text.
+
+        Args:
+            inp (str): Morse code input.
+
+        Returns:
+            str: Plain text equialent of morse code input.
+        """
         plain_text = ""
 
         for char in inp.split():
